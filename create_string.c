@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   create_string.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 12:26:25 by amann             #+#    #+#             */
-/*   Updated: 2022/05/11 14:27:46 by amann            ###   ########.fr       */
+/*   Created: 2022/05/11 14:20:22 by amann             #+#    #+#             */
+/*   Updated: 2022/05/11 14:27:49 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "brainfuck.h"
 
-int main(int ac, char **av)
+char	*create_string(void)
 {
-	if (ac == 2 && av[1][0])
-		brainfuck_control(av[1]);
-	else
-		write(1, "\n", 1);
-	return (0);
+	char	*res;
+	int		i;
+
+	res = (char *) malloc(sizeof(char) * 2048);
+	i = 0;
+	while (i < 2048)
+	{
+		res[i] = '\0';
+		i++;
+	}
+	return (res);
 }

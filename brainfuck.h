@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   brainfuck.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 12:26:25 by amann             #+#    #+#             */
-/*   Updated: 2022/05/11 14:27:46 by amann            ###   ########.fr       */
+/*   Created: 2022/05/11 12:29:14 by amann             #+#    #+#             */
+/*   Updated: 2022/05/11 14:21:04 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "brainfuck.h"
+#ifndef BRAINFUCK_H
+#define BRAINFUCK_H
 
-int main(int ac, char **av)
-{
-	if (ac == 2 && av[1][0])
-		brainfuck_control(av[1]);
-	else
-		write(1, "\n", 1);
-	return (0);
-}
+#include <unistd.h>
+#include <stdlib.h>
+
+void	brainfuck_control(char *str);
+char	*create_string(void);
+
+#endif
